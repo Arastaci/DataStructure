@@ -1,11 +1,11 @@
-/* Klavyeden -1 girilinceye kadar girilen tek sayıları listenin başına, çift sayıları ise listenin sonuna
-ekleyen fonksiyonu yazınız. */
+/* Klavyeden -1 girilinceye kadar girilen tek sayÃ½larÃ½ listenin baÃ¾Ã½na, Ã§ift sayÃ½larÃ½ ise listenin sonuna
+ekleyen fonksiyonu yazÃ½nÃ½z. */
 
 
 #include <stdio.h>
 #include <stdlib.h>
 
-//Struct tanımlaması
+//Struct tanÃ½mlamasÃ½
 struct Node {
     int data;
     struct Node* next;
@@ -16,7 +16,7 @@ struct List {
     struct Node* tail;
 };
 
-// Yeni node oluşturma 
+// Yeni node oluÃ¾turma 
 struct Node* createNode(int data) {
     struct Node* newNode = (struct Node*)malloc(sizeof(struct Node));
     if (newNode == NULL) {
@@ -28,12 +28,12 @@ struct Node* createNode(int data) {
     return newNode;
 }
 
-// Tek sayıları listenin başına, çift sayıları listenin sonuna ekle
+// Tek sayÃ½larÃ½ listenin baÃ¾Ã½na, Ã§ift sayÃ½larÃ½ listenin sonuna ekle
 void ekleTekCift(struct List* list, int data) {
     struct Node* newNode = createNode(data);
 
     if (data % 2 == 1) {
-        // Eğer tek sayı ise başa ekle
+        // EÃ°er tek sayÃ½ ise baÃ¾a ekle
         if (list->head == NULL) {
             list->head = newNode;
             list->tail = newNode;
@@ -42,7 +42,7 @@ void ekleTekCift(struct List* list, int data) {
             list->head = newNode;
         }
     } else {
-        // Eğer çift sayı ise sona ekle
+        // EÃ°er Ã§ift sayÃ½ ise sona ekle
         if (list->tail == NULL) {
             list->head = newNode;
             list->tail = newNode;
@@ -52,7 +52,7 @@ void ekleTekCift(struct List* list, int data) {
         }
     }
 }
-//Listeyi yazdır
+//Listeyi yazdÃ½r
 void printList(struct List* list) {
     struct Node* iter = list->head;
     while (iter != NULL) {
@@ -69,7 +69,7 @@ int main() {
 
     int sayi;
 
-    while (true) {
+    while (1) {
         printf("Listeye eklemek istediginiz sayilari giriniz (Cikis icin -1 yaziniz): ");
         scanf("%d", &sayi);
 
