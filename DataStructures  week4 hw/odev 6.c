@@ -78,7 +78,7 @@ void ogrenciYazdir(struct Ogrenci* ogrenci) {
 
 int main() {
     struct Ogrenci* ogrenci1 = yeniOgrenci("Esat", "Arastaci", 231020);
-    struct Ogrenci* ogrenci2 = yeniOgrenci("Abdurrahmangazi", "Null", 231021);
+    struct Ogrenci* ogrenci2 = yeniOgrenci("Abdurrahmangazi", "Yilmaz", 231021);
 
 
     //öðrenci ekle
