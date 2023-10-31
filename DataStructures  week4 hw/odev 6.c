@@ -1,8 +1,9 @@
+/* Listede en uzun ismin olduÄŸu kaydÄ± yazdÄ±ran fonksiyonu yazÄ±nÄ±z. */
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 
-// Struct yapısı
+// Struct yapÃ½sÃ½
 struct Ogrenci {
     char ad[50];
     char soyad[50];
@@ -10,7 +11,7 @@ struct Ogrenci {
     struct Ogrenci* next;
 };
 
-// Yeni öğrenci nodeu oluştur
+// Yeni Ã¶Ã°renci nodeu oluÃ¾tur
 struct Ogrenci* yeniOgrenci(char ad[50], char soyad[50], int numara) {
     struct Ogrenci* ogrenci = (struct Ogrenci*)malloc(sizeof(struct Ogrenci));
     strcpy(ogrenci->ad, ad);
@@ -20,7 +21,7 @@ struct Ogrenci* yeniOgrenci(char ad[50], char soyad[50], int numara) {
     return ogrenci;
 }
 
-// Öğrenci ekle
+// Ã–Ã°renci ekle
 void ogrenciEkle(struct Ogrenci** headRef, struct Ogrenci* yeniOgrenci) {
     yeniOgrenci->next = *headRef;
     *headRef = yeniOgrenci;
@@ -48,7 +49,7 @@ struct Ogrenci* enUzunIsimliOgrenci(struct Ogrenci* head) {
     return enUzunIsimli;
 }
 
-//İsimler aynı ise soyismi karşılaştırsın
+//Ãsimler aynÃ½ ise soyismi karÃ¾Ã½laÃ¾tÃ½rsÃ½n
 //ekstra eklemek istedim
 void soyisimkiyasi(struct Ogrenci ogrenci1, struct Ogrenci ogrenci2) {
     int len1 = strlen(ogrenci1.soyad);
@@ -67,7 +68,7 @@ void soyisimkiyasi(struct Ogrenci ogrenci1, struct Ogrenci ogrenci2) {
     }
 }
 
-// Öğrenci bilgilerini ekrana yazdır
+// Ã–Ã°renci bilgilerini ekrana yazdÃ½r
 void ogrenciYazdir(struct Ogrenci* ogrenci) {
     printf("Ad: %s\n", ogrenci->ad);
     printf("Soyad: %s\n", ogrenci->soyad);
@@ -80,12 +81,12 @@ int main() {
     struct Ogrenci* ogrenci2 = yeniOgrenci("Abdurrahmangazi", "Null", 231021);
 
 
-    //öğrenci ekle
+    //Ã¶Ã°renci ekle
     struct Ogrenci* head = NULL;
     ogrenciEkle(&head, ogrenci1);
     ogrenciEkle(&head, ogrenci2);
 
-    // En uzun isme sahip öğrenci
+    // En uzun isme sahip Ã¶Ã°renci
     struct Ogrenci* enUzunIsimli = enUzunIsimliOgrenci(head);
 
     if (enUzunIsimli != NULL) {
@@ -94,7 +95,7 @@ int main() {
     } else {
         printf("Listede ogrenci bulunamadi.\a\n");
     }
- 	// soyisimkiyasi(ogrenci1, ogrenci2); kafam karıştı burada kalsın
+ 	// soyisimkiyasi(ogrenci1, ogrenci2); kafam karÃ½Ã¾tÃ½ burada kalsÃ½n
     free(ogrenci1);
     free(ogrenci2);
 
